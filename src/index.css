@@ -91,6 +91,15 @@ button {
 }
 
 
+/* Card */
+
+/* Card Red Badge */
+
+.red_badge{
+    @apply bg-red-500 bg-opacity-20 text-red-600 font-bold py-1.5 px-3 rounded-full
+}
+
+
 /* FOOTER */
 
 .footer {

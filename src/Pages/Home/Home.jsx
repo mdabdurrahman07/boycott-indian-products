@@ -1,12 +1,17 @@
 import Banner from "../../Components/Banner/Banner";
 
+import AllProducts from "../AllProducts/AllProducts";
+
 const Home = () => {
     
 
     return (
+        <>
         <div>
-            <Banner />
+            <Banner/>
         </div>
+        <AllProducts/>
+       </>
     );
 };
 
