@@ -23,15 +23,11 @@ button {
 }
 
 .header ul {
-    @apply flex bg-primary bg-opacity-10 rounded-full
-}
-
-.header ul li {
-    @apply py-1.5 px-2 rounded-full
+    @apply flex gap-4 items-center
 }
 
 .header ul li a {
-    @apply font-semibold text-lg
+    @apply font-semibold text-lg capitalize
 }
 
 
@@ -50,19 +46,28 @@ button {
 }
 
 .banner_cat_card {
-    @apply bg-primary bg-opacity-10 py-1.5 px-3 rounded-full flex items-center gap-3 cursor-pointer hover:bg-opacity-25 transition-all
+    @apply bg-third bg-opacity-25 py-1.5 px-3 rounded-full flex items-center gap-3 cursor-pointer hover:bg-opacity-50 transition-all
 }
 
 .banner_cat_card img {
     @apply w-6 h-6
 }
 
-.banner_cat_card h3 {
-    @apply font-semibold text-primary
+.banner_cat_card h3,
+.cat_card h3 {
+    @apply font-bold text-primary
+}
+
+.cat_card {
+    @apply bg-third bg-opacity-25 p-5 rounded-3xl cursor-pointer hover:bg-opacity-50 transition-all space-y-3
+}
+
+.cat_card img {
+    @apply w-10 h-10 mx-auto
 }
 
 .cat_container {
-    @apply flex gap-4 items-center justify-center
+    @apply flex flex-wrap gap-4 items-center justify-center pt-5
 }
 
 .scroll_container {
