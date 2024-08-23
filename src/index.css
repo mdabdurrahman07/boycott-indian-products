@@ -38,7 +38,7 @@ button {
 /* BANNER */
 
 .banner {
-    @apply text-center py-10 space-y-8
+    @apply text-center py-24 space-y-8
 }
 
 .banner .badge {
@@ -47,6 +47,30 @@ button {
 
 .banner h2 {
     @apply font-extrabold text-5xl leading-snug
+}
+
+.banner_cat_card {
+    @apply bg-primary bg-opacity-10 py-1.5 px-3 rounded-full flex items-center gap-3 cursor-pointer hover:bg-opacity-25 transition-all
+}
+
+.banner_cat_card img {
+    @apply w-6 h-6
+}
+
+.banner_cat_card h3 {
+    @apply font-semibold text-primary
+}
+
+.cat_container {
+    @apply flex gap-4 items-center justify-center
+}
+
+.scroll_container {
+    @apply flex gap-2 justify-center items-center mt-32
+}
+
+.scroll_container img {
+    animation: wave 5s infinite;;
 }
 
 
@@ -69,4 +93,52 @@ button {
 
 .error img{
     @apply w-2/5 mx-auto
+}
+
+
+/* LOADER */
+.loader {
+    width: 15px;
+    aspect-ratio: 1;
+    position: relative;
+    animation: l9-0 1.5s infinite steps(2);
+  }
+  .loader::before,
+  .loader::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #000;
+  }
+  .loader::before {
+    box-shadow: 26px 0;
+    transform: translateX(-26px);
+    animation: l9-1 .75s infinite linear alternate;
+  }
+  .loader::after {
+    transform: translateX(13px) rotate(0deg) translateX(13px);
+    animation: l9-2 .75s infinite linear alternate;
+  }
+  @keyframes l9-0 {
+      0% ,49.9% {transform: scale(1)}
+      50%,100%  {transform: scale(-1)}
+  }
+  @keyframes l9-1 {
+      100%{box-shadow: 52px 0}
+  }
+  @keyframes l9-2 {
+      100%{transform: translateX(13px) rotate(-180deg) translateX(13px)}
+  }
+
+@keyframes wave {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
