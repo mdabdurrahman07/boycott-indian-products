@@ -18,7 +18,7 @@ const Banner = () => {
                         <BannerCategoryCard key={item.id} item={item}></BannerCategoryCard>
                     )).slice(0, 5)
                 }
-                <Link to="/category" className="banner_cat_card">
+                <Link to="/products" className="banner_cat_card">
                     <img className="!w-4 !h-4" src={PlusIcon} alt="icon" />
                     <h3>More</h3>
                 </Link>
