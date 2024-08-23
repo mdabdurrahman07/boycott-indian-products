@@ -41,12 +41,12 @@ button {
     @apply text-center py-10 space-y-8
 }
 
-.banner span {
+.banner .badge {
     @apply bg-green-500 bg-opacity-20 text-green-700 font-bold py-2 px-4 rounded-full
 }
 
 .banner h2 {
-    @apply font-extrabold
+    @apply font-extrabold text-5xl leading-snug
 }
 
 
