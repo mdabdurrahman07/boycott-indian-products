@@ -1,0 +1,62 @@
+[
+    {
+      "id": 1,
+      "name": "Food",
+      "image": "https://i.ibb.co/D51JQL1/food.png"
+    },
+    {
+      "id": 2,
+      "name": "Home & Kitchen",
+      "image": "https://i.ibb.co/SyNsb3c/kitchen.png"
+    },
+    {
+      "id": 3,
+      "name": "Cleaning Supplies",
+      "image": "https://i.ibb.co/y5Wtt78/cleaning.png"
+    },
+    {
+      "id": 4,
+      "name": "Personal Care",
+      "image": "https://i.ibb.co/1d3QHYK/personal-care.png"
+    },
+    {
+      "id": 5,
+      "name": "Health & Wellness",
+      "image": "https://i.ibb.co/6whfrLX/health.png"
+    },
+    {
+      "id": 6,
+      "name": "Baby Care",
+      "image": "https://i.ibb.co/F66D38f/baby-care.png"
+    },
+    {
+      "id": 7,
+      "name": "Stationery & Office",
+      "image": "https://i.ibb.co/HzbPKsF/stationery.png"
+    },
+    {
+      "id": 8,
+      "name": "Pet Care",
+      "image": "https://i.ibb.co/kKz8YGd/pet.png"
+    },
+    {
+      "id": 9,
+      "name": "Toys & Sports",
+      "image": "https://i.ibb.co/TTyVT6y/toys.png"
+    },
+    {
+      "id": 10,
+      "name": "Beauty & Makeup",
+      "image": "https://i.ibb.co/FmgfGLX/beauty.png"
+    },
+    {
+      "id": 11,
+      "name": "Fashion & Lifestyles",
+      "image": "https://i.ibb.co/3cGSd20/fasion-lifestyles.png"
+    },
+    {
+      "id": 12,
+      "name": "Vehicles Essentials",
+      "image": "https://i.ibb.co/PFFncL0/vehicle-essential.png"
+    }
+]  
