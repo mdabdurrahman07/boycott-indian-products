@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Logo from '../../assets/logo.png'
-import { useState } from 'react';
 
 const navItems = [
     {
@@ -12,13 +11,13 @@ const navItems = [
         link: '/bangladeshi'
     },
     {
-        name: 'category',
-        link: '/category'
+        name: 'products',
+        link: '/products'
     },
 ]
 
 const Header = () => {
-    const [currentNav, setCurrentNav] = useState('indian')
+    const location = useLocation()
 
     return (
         <div className="header">
@@ -29,7 +28,7 @@ const Header = () => {
                 <ul>
                     {
                         navItems?.map((item, idx) => (
-                            <li className={`${currentNav === item.name ? 'bg-primary text-white !px-4' : ''}`} key={idx} onClick={() => setCurrentNav(item?.name)}>
+                            <li className={`${location.pathname === item.link ? 'bg-secondary text-white px-4 rounded-full py-1' : 'py-1'}`} key={idx}>
                                 <a href={item.link}>{item.name}</a>
                             </li>
                         ))
