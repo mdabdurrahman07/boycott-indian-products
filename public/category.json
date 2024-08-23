@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "name": "Food",
+    "name": "Grocery",
     "image": "https://i.ibb.co/D51JQL1/food.png",
-    "link": "/food"
+    "link": "/grocery"
   },
   {
     "id": 2,
