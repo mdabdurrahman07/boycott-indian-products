@@ -8,6 +8,10 @@ body{
     background-color: #EEE5FF;
 }
 
+button {
+    @apply py-2.5 px-5 capitalize text-white font-bold bg-primary rounded-full hover:scale-105 transition-all
+}
+
 /* HEADER */
 
 .header {
@@ -19,7 +23,7 @@ body{
 }
 
 .header ul {
-    @apply flex bg-primary bg-opacity-20 rounded-full
+    @apply flex bg-primary bg-opacity-10 rounded-full
 }
 
 .header ul li {
@@ -31,6 +35,20 @@ body{
 }
 
 
+/* BANNER */
+
+.banner {
+    @apply text-center py-10 space-y-8
+}
+
+.banner span {
+    @apply bg-green-500 bg-opacity-20 text-green-700 font-bold py-2 px-4 rounded-full
+}
+
+.banner h2 {
+    @apply font-extrabold
+}
+
 
 /* FOOTER */
 
@@ -40,4 +58,15 @@ body{
 
 .footer h2 {
     @apply font-medium text-lg
+}
+
+
+/* ERROR PAGE */
+
+.error {
+    @apply min-h-screen items-center flex justify-center
+}
+
+.error img{
+    @apply w-2/5 mx-auto
 }

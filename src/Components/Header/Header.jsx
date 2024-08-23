@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Logo from '../../assets/logo.png'
 import { useState } from 'react';
 
@@ -22,7 +22,9 @@ const Header = () => {
 
     return (
         <div className="header">
-            <img src={Logo} className='logo' alt="logo" />
+            <Link to={'/'}> 
+                <img src={Logo} className='logo' alt="logo" />
+            </Link>
             <div>
                 <ul>
                     {
