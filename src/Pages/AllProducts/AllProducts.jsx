@@ -1,8 +1,9 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { useForm } from "react-hook-form";
 import maggie from "../../assets/maggie.png";
 // import { SearchOutlined } from "@ant-design/icons";
 import search from "../../assets/search.png";
+import { Link } from "react-router-dom";
 
 const AllProducts = () => {
   //   const [value, setValue] = useState();
@@ -42,6 +43,9 @@ const AllProducts = () => {
             <span className="red_badge">Indian</span>
           </div>
         </div>
+      </div>
+      <div className="my-10 text-center">
+            <button><Link to="/products">See More</Link></button>
       </div>
     </div>
   );
