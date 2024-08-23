@@ -28,7 +28,7 @@ const Header = () => {
                 <ul>
                     {
                         navItems?.map((item, idx) => (
-                            <li className={`${location.pathname === item.link ? 'bg-primary text-white px-4 rounded-full py-1' : 'py-1'}`} key={idx}>
+                            <li className={`${location.pathname === item.link ? 'bg-secondary text-white px-4 rounded-full py-1' : 'py-1'}`} key={idx}>
                                 <a href={item.link}>{item.name}</a>
                             </li>
                         ))

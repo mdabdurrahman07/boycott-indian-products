@@ -58,13 +58,6 @@ button {
     @apply font-bold text-primary
 }
 
-.cat_card {
-    @apply bg-third bg-opacity-25 p-5 rounded-3xl cursor-pointer hover:bg-opacity-50 transition-all space-y-3
-}
-
-.cat_card img {
-    @apply w-10 h-10 mx-auto
-}
 
 .cat_container {
     @apply flex flex-wrap gap-4 items-center justify-center pt-5
@@ -76,6 +69,25 @@ button {
 
 .scroll_container img {
     animation: wave 5s infinite;;
+}
+
+
+/* PRODUCTS PAGE */
+
+.cat_card {
+    @apply bg-third bg-opacity-25 p-5 rounded-3xl cursor-pointer hover:bg-opacity-50 transition-all space-y-3
+}
+
+.cat_card img {
+    @apply w-10 h-10 mx-auto
+}
+
+.my_tab {
+    @apply bg-third bg-opacity-35 flex items-center rounded-full mt-10
+}
+
+.my_tab div {
+    @apply px-3 py-2 font-semibold capitalize rounded-full cursor-pointer
 }
 
 
