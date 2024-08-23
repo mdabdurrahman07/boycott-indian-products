@@ -22,12 +22,12 @@ body{
     @apply flex bg-primary bg-opacity-20 rounded-full
 }
 
-.header ul li a {
-    @apply font-semibold text-lg py-2 px-4
+.header ul li {
+    @apply py-1.5 px-2 rounded-full
 }
 
-.header ul li .active {
-    @apply text-white bg-primary rounded-full
+.header ul li a {
+    @apply font-semibold text-lg
 }
 
 

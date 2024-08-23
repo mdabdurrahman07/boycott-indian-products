@@ -27,7 +27,7 @@ const Header = () => {
                 <ul>
                     {
                         navItems?.map((item, idx) => (
-                            <li key={idx} onClick={() => setCurrentNav(item?.name)}>
+                            <li className={`${currentNav === item.name ? 'bg-primary text-white !px-4' : ''}`} key={idx} onClick={() => setCurrentNav(item?.name)}>
                                 <a href={item.link}>{item.name}</a>
                             </li>
                         ))
