@@ -1,15 +1,13 @@
-// import { useState } from "react";
 import { useForm } from "react-hook-form";
-import maggie from "../../assets/maggie.png";
-// import { SearchOutlined } from "@ant-design/icons";
 import search from "../../assets/search.png";
 import { Link } from "react-router-dom";
+import useProducts from "../../Hooks/useProducts";
 
 const AllProducts = () => {
-  //   const [value, setValue] = useState();
   const { register, handleSubmit } = useForm();
   const onChange = (data) => console.log(data);
-  //   console.log(value);
+  const {product} = useProducts()
+  console.log(product)
   return (
     <div>
       <div className="flex justify-between items-center">
@@ -36,13 +34,17 @@ const AllProducts = () => {
         </div>
       </div>
       <div className="my-10 grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-        <div className="bg-[#F3ECFF] space-y-5 border-2 border-[#916DD580] p-4 rounded-xl w-60">
-          <img className="mx-auto" src={maggie} alt="noddles" />
-          <h1 className="font-semibold text-2xl">Maggie Noddles</h1>
+       {
+        product?.slice(0,10).map(products =>(
+          <div key={products?.id} className="bg-[#F3ECFF] space-y-5 border-2 border-[#916DD580] p-4 rounded-xl w-60">
+          <img className="mx-auto" src={products?.productImg} alt="noddles" />
+          <h1 className="font-semibold text-2xl">{products?.productName}</h1>
           <div>
-            <span className="red_badge">Indian</span>
+            <span className="red_badge">{products?.origin}</span>
           </div>
         </div>
+        ))
+       }
       </div>
       <div className="my-10 text-center">
             <button><Link to="/products">See More</Link></button>
