@@ -1,13 +1,18 @@
 import {  useQuery } from "@tanstack/react-query"
+import axios from "axios"
 
 
-const useProducts = () =>{
+const useProducts =  () =>{
     const {data: product = [], isPending } = useQuery({
         queryKey:["productData"],
-        queryFn: () => fetch('products.json')
-        .then((res) => res.json())
+        queryFn: async  () => {
+          const  res = await axios.get("https://boycott-india-server.vercel.app/api/bcip/v1/allproducts/get") 
+          return res?.data
+        }
+
 
     })
+    console.log(product)
     return {product, isPending}
 }
 

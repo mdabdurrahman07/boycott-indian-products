@@ -1,5 +1,4 @@
 import { useForm } from "react-hook-form";
-import maggie from "../../assets/maggie.png";
 import search from "../../assets/search.png";
 import { Link } from "react-router-dom";
 import useProducts from "../../Hooks/useProducts";
