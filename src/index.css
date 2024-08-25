@@ -12,6 +12,12 @@ button {
     @apply py-2.5 px-5 capitalize text-white font-bold bg-primary rounded-full hover:scale-105 transition-all
 }
 
+/* fabricating Ant UI  */
+
+.ant-btn{
+    @apply !hidden
+}
+
 /* HEADER */
 
 .header {
