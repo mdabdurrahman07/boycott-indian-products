@@ -5,7 +5,7 @@ import useProducts from "../../Hooks/useProducts";
 
 const tabItems = [
     {name: 'indian'},
-    {name: 'bangladeshi'}
+    {name: 'non indian'}
 ]
 
 const Products = () => {

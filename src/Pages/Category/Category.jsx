@@ -6,7 +6,7 @@ import SearchIcon from '../../assets/search.png'
 
 const tabItems = [
     {name: 'indian'},
-    {name: 'bangladeshi'}
+    {name: 'non indian'}
 ]
 
 const Category = () => {
@@ -16,9 +16,19 @@ const Category = () => {
     const [selectProduct, setSelectProduct] = useState('');
     
     const filteredProduct = product?.filter(product => product?.category === category)
-    const originProduct = product?.filter(product => product?.origin === currentTabItem)
+    const indianProduct = filteredProduct?.filter(product => product?.origin === "indian")
+    const nonIndianProduct = filteredProduct?.filter(product => product?.origin !== "indian")
+
+    var searchedProduct
+
+    if(currentTabItem === 'indian'){
+        const searchingProduct = indianProduct?.filter(product => product?.productName.toLowerCase().includes(selectProduct.toLowerCase()))
+        searchedProduct = searchingProduct
+    } else {
+        const searchingProduct = nonIndianProduct?.filter(product => product?.productName.toLowerCase().includes(selectProduct.toLowerCase()))
+        searchedProduct = searchingProduct
+    }
     
-    const searchedProduct = originProduct?.filter(product => product?.productName.toLowerCase().includes(selectProduct.toLowerCase()))
 
     return (
         <div>
@@ -55,9 +65,16 @@ const Category = () => {
                             <h3 className="text-center font-semibold text-3xl col-span-6 py-20">No Product Found</h3>
                         )
                         :
-                        originProduct?.map(product => (
-                            <ProductCard key={product?._id} product={product} />
-                        ))
+                        (
+                            currentTabItem === 'indian' ? 
+                            indianProduct?.map(product => (
+                                <ProductCard key={product?._id} product={product} />
+                            ))
+                            :
+                            nonIndianProduct?.map(product => (
+                                <ProductCard key={product?._id} product={product} />
+                            ))
+                        )
                     }
                 </div>
             </div>

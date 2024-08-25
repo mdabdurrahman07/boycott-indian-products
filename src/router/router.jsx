@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home";
 import Error from "../Pages/error/Error";
 import Products from "../Pages/Products/Products";
 import Category from "../Pages/Category/Category";
+import NonIndian from "../Pages/NonIndian/NonIndian";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/products",
         element: <Products />,
+      },
+      {
+        path: "/non-indian",
+        element: <NonIndian />,
       },
       {
         path: "/products/:category",

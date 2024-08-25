@@ -10,8 +10,8 @@ const navItems = [
         link: '/'
     },
     {
-        name: 'bangladeshi',
-        link: '/bangladeshi'
+        name: 'non indian',
+        link: '/non-indian'
     },
     {
         name: 'products',
