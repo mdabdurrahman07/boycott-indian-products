@@ -7,15 +7,17 @@
     "company":"Marico",
     "origin":"indian",
     "category":"grocery",
-    "alt":[{
-    "id":1,
-    "productName":"Teer oil",
-    "type":"vegetable_oil",
-    "productImg":"https://i.ibb.co/G2Z5SyL/teer.png",
-    "company":"City Group",
-    "origin":"bangladeshi",
-    "category":"grocery"
-    }]
+    "alt":[
+        {
+            "id":1,
+            "productName":"Teer oil",
+            "type":"vegetable_oil",
+            "productImg":"https://i.ibb.co/G2Z5SyL/teer.png",
+            "company":"City Group",
+            "origin":"bangladeshi",
+            "category":"grocery"
+        }
+    ]
     
     },
     {

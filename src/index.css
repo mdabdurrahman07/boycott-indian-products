@@ -19,7 +19,7 @@ button {
 }
 
 .header .logo {
-    @apply w-14
+    @apply w-10 md:w-14
 }
 
 .header ul {
@@ -28,6 +28,22 @@ button {
 
 .header ul li a {
     @apply font-semibold text-lg capitalize
+}
+
+.ham_container {
+    @apply absolute left-0 top-16 w-full border-t-2 z-10 transition-all duration-500 bg-white py-5 h-full min-h-screen
+}
+
+.ham_menu_item {
+    @apply font-semibold w-full
+}
+
+.ham_container ul li{
+    @apply w-full text-center hover:bg-third hover:bg-opacity-60 py-1.5 rounded-xl
+}
+
+.ham_container ul {
+    @apply flex-col gap-1
 }
 
 
@@ -88,6 +104,14 @@ button {
 
 .my_tab div {
     @apply px-3 py-2 font-semibold capitalize rounded-full cursor-pointer
+}
+
+.search {
+    @apply flex bg-white bg-opacity-60 rounded-full
+}
+
+.search input {
+    @apply rounded-full focus:outline-none py-2 px-3
 }
 
 
