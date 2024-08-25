@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import search from "../../assets/search.png";
 import { Link } from "react-router-dom";
 import useProducts from "../../Hooks/useProducts";
+import ProductCard from "../../Components/Card/ProductCard";
 
 const AllProducts = () => {
   const { register, handleSubmit } = useForm();
@@ -33,16 +34,10 @@ const AllProducts = () => {
           </form>
         </div>
       </div>
-      <div className="my-10 grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      <div className="my-10 grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
        {
         product?.slice(0,10).map(products =>(
-          <div key={products?.id} className="bg-[#F3ECFF] space-y-5 border-2 border-[#916DD580] p-4 rounded-xl w-60">
-          <img className="mx-auto" src={products?.productImg} alt="noddles" />
-          <h1 className="font-semibold text-2xl">{products?.productName}</h1>
-          <div>
-            <span className="red_badge">{products?.origin}</span>
-          </div>
-        </div>
+          <ProductCard key={products._id} product={products}/>
         ))
        }
       </div>
