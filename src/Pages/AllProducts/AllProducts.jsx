@@ -3,18 +3,23 @@ import search from "../../assets/search.png";
 import { Link } from "react-router-dom";
 import useProducts from "../../Hooks/useProducts";
 import ProductCard from "../../Components/Card/ProductCard";
+import { useState } from "react";
 
 const AllProducts = () => {
+  const [searchValue, setSearchValue] = useState("");
   const { register, handleSubmit } = useForm();
-  const onChange = (data) => console.log(data);
-  const {product} = useProducts()
-  console.log(product)
+  const { product } = useProducts();
+  const onChange = (data) => setSearchValue(data?.category);
+  const searchProductFilter = product.filter((value) =>
+    value.productName.toLowerCase().includes(searchValue.toLowerCase())
+  );
+
   return (
     <div>
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-0">
         <h1 className="font-semibold text-3xl">All Products</h1>
-        <div className="w-1/5">
-          <form onClick={handleSubmit(onChange)}>
+        <div className="w-full md:w-1/5">
+          <form onChange={handleSubmit(onChange)}>
             <div className="relative">
               <input
                 className="w-full py-2 rounded-full px-4 outline-none"
@@ -22,10 +27,7 @@ const AllProducts = () => {
                 {...register("category", { maxLength: 20 })}
               />
               <div className="absolute top-0 right-0">
-                <div
-                  type="submit"
-                  className="bg-primary rounded-full w-10 h-10 flex items-center justify-center"
-                >
+                <div className="bg-primary rounded-full w-10 h-10 flex items-center justify-center">
                   {/* <SearchOutlined className="text-white text-2xl font-medium " /> */}
                   <img src={search} alt="" className="w-5" />
                 </div>
@@ -34,15 +36,31 @@ const AllProducts = () => {
           </form>
         </div>
       </div>
-      <div className="my-10 grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-       {
-        product?.slice(0,10).map(products =>(
-          <ProductCard key={products._id} product={products}/>
-        ))
-       }
+      <div className="my-10 grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        {searchValue ? (
+          searchProductFilter.length > 0 ? (
+            searchProductFilter?.map((products) => (
+              <ProductCard key={products._id} product={products} />
+            ))
+          ) : 
+          (
+            <h3 className="text-2xl font-bold text-center py-10 col-span-6">
+              No Product Found
+            </h3>
+          )
+        ) : 
+        (
+          product
+            ?.slice(0, 10)
+            .map((products) => (
+              <ProductCard key={products._id} product={products} />
+            ))
+        )}
       </div>
-      <div className="my-10 text-center">
-            <button><Link to="/products">See More</Link></button>
+      <div className={`my-10 text-center ${searchValue ? 'hidden' : 'block'}`}>
+        <button>
+          <Link to="/products">See More</Link>
+        </button>
       </div>
     </div>
   );

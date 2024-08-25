@@ -12,7 +12,7 @@ const useProducts =  () =>{
 
 
     })
-    console.log(product)
+    
     return {product, isPending}
 }
 
