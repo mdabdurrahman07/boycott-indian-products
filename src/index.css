@@ -56,15 +56,15 @@ button {
 /* BANNER */
 
 .banner {
-    @apply text-center py-24 space-y-8
+    @apply text-center py-10 md:py-24 space-y-8 
 }
 
 .banner .badge {
-    @apply bg-green-500 bg-opacity-20 text-green-700 font-bold py-2 px-4 rounded-full
+    @apply bg-green-500 bg-opacity-20 text-green-700 font-bold py-1.5 lg:py-2 px-3 lg:px-4 rounded-full
 }
 
 .banner h2 {
-    @apply font-extrabold text-5xl leading-snug
+    @apply font-extrabold text-3xl lg:text-5xl leading-snug
 }
 
 .banner_cat_card {
@@ -72,7 +72,7 @@ button {
 }
 
 .banner_cat_card img {
-    @apply w-6 h-6
+    @apply w-5 md:w-6 h-5 md:h-6
 }
 
 .banner_cat_card h3,
@@ -86,7 +86,7 @@ button {
 }
 
 .scroll_container {
-    @apply flex gap-2 justify-center items-center mt-32
+    @apply flex gap-2 justify-center items-center mt-10 md:mt-32
 }
 
 .scroll_container img {

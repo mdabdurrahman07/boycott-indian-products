@@ -2,6 +2,7 @@ import { useState } from "react";
 import CategoryCard from "../../Components/CategoryCard/CategoryCard";
 import useCategory from "../../Hooks/useCategory";
 import useProducts from "../../Hooks/useProducts";
+import ProductCard from "../../Components/Card/ProductCard";
 
 const tabItems = [
     {name: 'indian'},
@@ -12,8 +13,9 @@ const Products = () => {
     const {product} = useProducts()
     const {categories} = useCategory()
     const [currentTabItem, setCurrentTabItem] = useState('indian')
-
-    const filteredProduct = product?.filter(product => product?.origin === currentTabItem)
+    
+    const indianProduct = product?.filter(product => product?.origin === "indian")
+    const nonIndianProduct = product?.filter(product => product?.origin !== "indian")
 
     return (
         <div className="py-10">
@@ -33,10 +35,15 @@ const Products = () => {
                     }
                 </div>                
             </div>
-            <div className="grid grid-cols-5 gap-5">
+            <div className="grid grid-cols-6 gap-6">
                 {
-                    filteredProduct?.map(product => (
-                        <div key={product?._id}>hi</div>
+                    currentTabItem === 'indian' ? 
+                    indianProduct?.map(product => (
+                        <ProductCard key={product?._id} product={product} />
+                    ))
+                    :
+                    nonIndianProduct?.map(product => (
+                        <ProductCard key={product?._id} product={product} />
                     ))
                 }
             </div>
