@@ -9,66 +9,66 @@
     "id": 2,
     "name": "Home & Kitchen",
     "image": "https://i.ibb.co/SyNsb3c/kitchen.png",
-    "link": "/home-kitchen"
+    "link": "/home & kitchen"
   },
   {
     "id": 3,
     "name": "Cleaning Supplies",
     "image": "https://i.ibb.co/y5Wtt78/cleaning.png",
-    "link": "/cleaning-supplies"
+    "link": "/cleaning supplies"
   },
   {
     "id": 4,
     "name": "Personal Care",
     "image": "https://i.ibb.co/1d3QHYK/personal-care.png",
-    "link": "/personal-care"
+    "link": "/personal care"
   },
   {
     "id": 5,
     "name": "Health & Wellness",
     "image": "https://i.ibb.co/6whfrLX/health.png",
-    "link": "/health-wellness"
+    "link": "/health & wellness"
   },
   {
     "id": 6,
     "name": "Baby Care",
     "image": "https://i.ibb.co/F66D38f/baby-care.png",
-    "link": "/baby-care"
+    "link": "/baby care"
   },
   {
     "id": 7,
     "name": "Stationery & Office",
     "image": "https://i.ibb.co/HzbPKsF/stationery.png",
-    "link": "/stationery-office"
+    "link": "/stationery & office"
   },
   {
     "id": 8,
     "name": "Pet Care",
     "image": "https://i.ibb.co/kKz8YGd/pet.png",
-    "link": "/pet-care"
+    "link": "/pet care"
   },
   {
     "id": 9,
     "name": "Toys & Sports",
     "image": "https://i.ibb.co/TTyVT6y/toys.png",
-    "link": "/toys-sports"
+    "link": "/toys & sports"
   },
   {
     "id": 10,
     "name": "Beauty & Makeup",
     "image": "https://i.ibb.co/FmgfGLX/beauty.png",
-    "link": "/beauty-makeup"
+    "link": "/beauty & makeup"
   },
   {
     "id": 11,
     "name": "Fashion & Lifestyles",
     "image": "https://i.ibb.co/3cGSd20/fasion-lifestyles.png",
-    "link": "/fashion-lifestyles"
+    "link": "/fashion & lifestyles"
   },
   {
     "id": 12,
     "name": "Vehicles Essentials",
     "image": "https://i.ibb.co/PFFncL0/vehicle-essential.png",
-    "link": "/vehicle-essentials"
+    "link": "/vehicle essentials"
   }
 ]
