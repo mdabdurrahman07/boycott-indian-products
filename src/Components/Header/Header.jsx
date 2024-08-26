@@ -46,7 +46,7 @@ const Header = () => {
                     <img src={Bars} className={`m-1.5 w-6 ${!showMenu ? 'block' : 'hidden'}`} alt="" />
                     <img src={Cross} className={`m-1.5 w-6 ${!showMenu ? 'hidden' : 'block'}`} alt="" />
                 </div>
-                <div className={`ham_container ${!showMenu ? '!-left-[500px]' : '!left-0'}`}>
+                <div className={`ham_container ${!showMenu ? '!-left-[2000px]' : '!left-0'}`}>
                     <ul className="px-4">
                         {
                             navItems?.map((item, idx) => (

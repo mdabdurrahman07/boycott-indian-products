@@ -12,8 +12,8 @@ const NonIndian = () => {
 
     return (
         <div className="py-6">
-            <div className="flex justify-between items-center">
-                <h3 className="capitalize font-bold text-2xl">Non Indian Products</h3>
+            <div className="flex flex-col md:flex-row gap-5 justify-between items-center">
+                <h3 className="capitalize font-bold text-xl md:text-2xl">Non Indian Products</h3>
                 <div className='search'>
                     <input onChange={(e) => setSelectProduct(e.target.value)} type="text" placeholder='Search product' />
                     <div className='bg-primary flex items-center justify-center rounded-full cursor-pointer'>
@@ -22,7 +22,7 @@ const NonIndian = () => {
                 </div> 
             </div>
             <div className="min-h-[65vh]">
-                <div className="grid grid-cols-6 gap-6 mt-6">
+                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-6 mt-6">
                     {
                         selectProduct ?
                         (

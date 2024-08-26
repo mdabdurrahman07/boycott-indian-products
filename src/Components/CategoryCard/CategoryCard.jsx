@@ -5,7 +5,7 @@ const CategoryCard = ({item}) => {
     return (
         <Link to={`/products${link}`} className="cat_card">
             <img src={image} alt="icon" />
-            <h3 className="font-bold">{name}</h3>
+            <h3>{name}</h3>
         </Link>
     );
 };

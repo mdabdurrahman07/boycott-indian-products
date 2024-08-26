@@ -26,7 +26,7 @@ const Products = () => {
                     ))
                 }
             </div>
-            <div className="py-10 flex justify-center">
+            <div className="py-5 md:py-10 flex justify-center">
                 <div className="my_tab">
                     {
                         tabItems?.map((item, idx) => (
@@ -35,7 +35,7 @@ const Products = () => {
                     }
                 </div>                
             </div>
-            <div className="grid grid-cols-6 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-6">
                 {
                     currentTabItem === 'indian' ? 
                     indianProduct?.map(product => (

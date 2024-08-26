@@ -8,16 +8,18 @@ import { useState } from "react";
 const AllProducts = () => {
   const [searchValue, setSearchValue] = useState("");
   const { register, handleSubmit } = useForm();
-  const { product } = useProducts();
+  const { product, isPending } = useProducts();
   const onChange = (data) => setSearchValue(data?.category);
   const searchProductFilter = product.filter((value) =>
     value.productName.toLowerCase().includes(searchValue.toLowerCase())
   );
+  console.log(product?.length);
+  
 
   return (
     <div>
       <div className="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-0">
-        <h1 className="font-semibold text-3xl">All Products</h1>
+        <h1 className="font-semibold text-2xl md:text-3xl">All Products</h1>
         <div className="w-full md:w-1/5">
           <form onChange={handleSubmit(onChange)}>
             <div className="relative">
@@ -36,8 +38,13 @@ const AllProducts = () => {
           </form>
         </div>
       </div>
-      <div className="my-10 grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-        {searchValue ? (
+      <div className="my-10 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        {isPending ?
+        <div className="py-5 flex justify-center col-span-6">
+          <div className="loader"></div>
+        </div>
+        :          
+        searchValue ? (
           searchProductFilter.length > 0 ? (
             searchProductFilter?.map((products) => (
               <ProductCard key={products._id} product={products} />
@@ -51,13 +58,13 @@ const AllProducts = () => {
         ) : 
         (
           product
-            ?.slice(0, 10)
+            ?.slice(0, 12)
             .map((products) => (
               <ProductCard key={products._id} product={products} />
             ))
         )}
       </div>
-      <div className={`my-10 text-center ${searchValue ? 'hidden' : 'block'}`}>
+      <div className={`my-10 text-center ${product?.length < 12 || searchValue || isPending  ? 'hidden' : 'block'}`}>
         <button>
           <Link to="/products">See More</Link>
         </button>
