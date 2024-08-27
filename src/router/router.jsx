@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import Layout from "../layout/layout";
 import Home from "../Pages/Home/Home";
 import Error from "../Pages/error/Error";
 import Products from "../Pages/Products/Products";
 import Category from "../Pages/Category/Category";
 import NonIndian from "../Pages/NonIndian/NonIndian";
+import Layout from "../Layout/Layout";
 
 const router = createBrowserRouter([
   {
