@@ -137,7 +137,7 @@ button {
     @apply bg-red-500 bg-opacity-20 text-red-600 text-sm md:text-base font-semibold md:font-bold py-1 md:py-1.5 px-2 md:px-3 rounded-full
 }
 
-.red_badge{
+.green_badge{
     @apply bg-green-500 bg-opacity-20 text-green-600 text-sm md:text-base font-semibold md:font-bold py-1 md:py-1.5 px-2 md:px-3 rounded-full
 }
 

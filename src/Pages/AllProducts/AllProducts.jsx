@@ -13,7 +13,6 @@ const AllProducts = () => {
   const searchProductFilter = product.filter((value) =>
     value.productName.toLowerCase().includes(searchValue.toLowerCase())
   );
-  console.log(product?.length);
   
 
   return (
@@ -39,11 +38,7 @@ const AllProducts = () => {
         </div>
       </div>
       <div className="my-10 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-        {isPending ?
-        <div className="py-5 flex justify-center col-span-6">
-          <div className="loader"></div>
-        </div>
-        :          
+        {  
         searchValue ? (
           searchProductFilter.length > 0 ? (
             searchProductFilter?.map((products) => (
@@ -58,13 +53,13 @@ const AllProducts = () => {
         ) : 
         (
           product
-            ?.slice(0, 12)
+            ?.slice(0, 18)
             .map((products) => (
               <ProductCard key={products._id} product={products} />
             ))
         )}
       </div>
-      <div className={`my-10 text-center ${product?.length < 12 || searchValue || isPending  ? 'hidden' : 'block'}`}>
+      <div className={`my-10 text-center ${product?.length < 18 || searchValue || isPending  ? 'hidden' : 'block'}`}>
         <button>
           <Link to="/products">See More</Link>
         </button>

@@ -15,9 +15,11 @@ const Category = () => {
     const [currentTabItem, setCurrentTabItem] = useState('indian')
     const [selectProduct, setSelectProduct] = useState('');
     
-    const filteredProduct = product?.filter(product => product?.category === category)
-    const indianProduct = filteredProduct?.filter(product => product?.origin === "indian")
-    const nonIndianProduct = filteredProduct?.filter(product => product?.origin !== "indian")
+    const filteredProduct = product?.filter(product => product?.category.toLowerCase() === category.toLowerCase())
+    const indianProduct = filteredProduct?.filter(product => (product?.origin.toLowerCase() === "indian") || (product?.origin.toLowerCase() === 'india'))
+    const nonIndianProduct = filteredProduct?.filter(product => 
+        product?.origin.toLowerCase() !== "india"
+    );
 
     var searchedProduct
 

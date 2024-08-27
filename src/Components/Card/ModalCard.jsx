@@ -1,8 +1,7 @@
 import useProducts from "../../Hooks/useProducts"
 
 const ModalCard = ({value}) => {
-   const {productName} = value || {} 
-   
+   const {productName} = value || {}   
    
     const {product} = useProducts()
     const findProduct = product.find(value => value.productName === productName)

@@ -14,8 +14,13 @@ const Products = () => {
     const {categories} = useCategory()
     const [currentTabItem, setCurrentTabItem] = useState('indian')
     
-    const indianProduct = product?.filter(product => product?.origin === "indian")
-    const nonIndianProduct = product?.filter(product => product?.origin !== "indian")
+    const indianProduct = product?.filter(product => (product?.origin.toLowerCase() === "indian") || (product?.origin.toLowerCase() === 'india'))
+    const nonIndianProduct = product?.filter(product => 
+        product?.origin.toLowerCase() !== "india"
+    );
+
+    console.log(product?.filter(product => (product?.origin.toLowerCase() !== "indian") || (product?.origin.toLowerCase() !== 'india')));
+    
 
     return (
         <div className="py-10">
