@@ -15,9 +15,11 @@ const Category = () => {
     const [currentTabItem, setCurrentTabItem] = useState('indian')
     const [selectProduct, setSelectProduct] = useState('');
     
-    const filteredProduct = product?.filter(product => product?.category === category)
-    const indianProduct = filteredProduct?.filter(product => product?.origin === "indian")
-    const nonIndianProduct = filteredProduct?.filter(product => product?.origin !== "indian")
+    const filteredProduct = product?.filter(product => product?.category.toLowerCase() === category.toLowerCase())
+    const indianProduct = filteredProduct?.filter(product => (product?.origin.toLowerCase() === "indian") || (product?.origin.toLowerCase() === 'india'))
+    const nonIndianProduct = filteredProduct?.filter(product => 
+        product?.origin.toLowerCase() !== "india"
+    );
 
     var searchedProduct
 
@@ -32,8 +34,8 @@ const Category = () => {
 
     return (
         <div>
-            <div className="py-5 grid grid-cols-3 gap-5 justify-between items-center">
-                <h3 className="capitalize font-bold text-2xl">{category}</h3>
+            <div className="py-5 grid grid-cols-1 md:grid-cols-3 gap-5 justify-between items-center">
+                <h3 className="capitalize font-bold text-[22px] md:text-2xl text-center md:text-left">{category}</h3>
                 <div className="flex justify-center">
                     <div className="my_tab !mt-0">
                         {
@@ -47,34 +49,49 @@ const Category = () => {
                     <div className='search'>
                         <input onChange={(e) => setSelectProduct(e.target.value)} type="text" placeholder='Search product' />
                         <div className='bg-primary flex items-center justify-center rounded-full cursor-pointer'>
-                            <img src={SearchIcon} alt="icon" className='w-5 h-5 my-2 mx-2.5' />
+                            <img src={SearchIcon} alt="icon" className='w-5 h-5 my-2 mx-3.5 lg:mx-2.5' />
                         </div>
                     </div> 
                 </div>          
             </div>
             <div className="min-h-[65vh]">
-                <div className="grid grid-cols-6 gap-6 pt-5 pb-10">
+                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-6 pt-5 pb-5 md:pb-10">
                     {
-                        selectProduct ?
+                        filteredProduct?.length > 0 ?
                         (
-                            searchedProduct?.length > 0 ?
-                            searchedProduct?.map(product => (
-                                <ProductCard key={product?._id} product={product} />
-                            ))
+                            selectProduct ?
+                            (
+                                searchedProduct?.length > 0 ?
+                                searchedProduct?.map(product => (
+                                    <ProductCard key={product?._id} product={product} />
+                                ))
+                                :
+                                <h3 className="no_product">No Product Found</h3>
+                            )
                             :
-                            <h3 className="text-center font-semibold text-3xl col-span-6 py-20">No Product Found</h3>
+                            (
+                                currentTabItem === 'indian' ? 
+                                (
+                                    indianProduct?.length > 0 ?
+                                    indianProduct?.map(product => (
+                                        <ProductCard key={product?._id} product={product} />
+                                    )) 
+                                    :
+                                    <h3 className="no_product">No Product Found</h3>
+                                )
+                                :
+                                (
+                                    nonIndianProduct?.length > 0 ?
+                                    nonIndianProduct?.map(product => (
+                                        <ProductCard key={product?._id} product={product} />
+                                    ))
+                                    :
+                                    <h3 className="no_product">No Product Found</h3>
+                                )
+                            )
                         )
                         :
-                        (
-                            currentTabItem === 'indian' ? 
-                            indianProduct?.map(product => (
-                                <ProductCard key={product?._id} product={product} />
-                            ))
-                            :
-                            nonIndianProduct?.map(product => (
-                                <ProductCard key={product?._id} product={product} />
-                            ))
-                        )
+                        <h3 className="no_product">No Product Found</h3>
                     }
                 </div>
             </div>
