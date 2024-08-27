@@ -27,7 +27,7 @@ function ProductCard({ product }) {
 
       <div
         onClick={showModal}
-        className={`bg-[#F3ECFF] space-y-3 md:space-y-5 border-2 border-primary border-opacity-20 p-4 rounded-xl  hover:border-opacity-40 transition-all cursor-pointer`}
+        className={`bg-white space-y-3 md:space-y-5 border-2 border-primary border-opacity-20 p-4 rounded-xl  hover:border-opacity-40 transition-all cursor-pointer`}
       >
         <img
           className="mx-auto w-16 md:w-24 h-auto max-h-24"

@@ -10,15 +10,17 @@ const AllProducts = () => {
   const { register, handleSubmit } = useForm();
   const { product, isPending } = useProducts();
   const onChange = (data) => setSearchValue(data?.category);
-  const searchProductFilter = product.filter((value) =>
-    value.productName.toLowerCase().includes(searchValue.toLowerCase())
-  );
   
+  const indianProduct = product?.filter(product => (product?.origin.toLowerCase() === "indian") || (product?.origin.toLowerCase() === 'india'))
+
+  const searchProductFilter = indianProduct.filter((value) =>
+    value.productName.toLowerCase().includes(searchValue.toLowerCase())
+  );  
 
   return (
     <div>
       <div className="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-0">
-        <h1 className="font-semibold text-2xl md:text-3xl">All Products</h1>
+        <h1 className="font-semibold text-2xl md:text-3xl">Indian Products</h1>
         <div className="w-full md:w-1/5">
           <form onChange={handleSubmit(onChange)}>
             <div className="relative">
@@ -52,7 +54,7 @@ const AllProducts = () => {
           )
         ) : 
         (
-          product
+          indianProduct
             ?.slice(0, 18)
             .map((products) => (
               <ProductCard key={products._id} product={products} />

@@ -7,7 +7,7 @@ const NonIndian = () => {
     const {product} = useProducts()
     const [selectProduct, setSelectProduct] = useState('');
 
-    const nonIndianProduct = product?.filter(product => product?.origin !== "indian")
+    const nonIndianProduct = product?.filter(product => product?.origin.toLowerCase() !== "india")
     const searchingProduct = nonIndianProduct?.filter(product => product?.productName.toLowerCase().includes(selectProduct.toLowerCase()))
 
     return (
