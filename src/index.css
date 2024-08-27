@@ -145,7 +145,7 @@ button {
 /* FOOTER */
 
 .footer {
-    @apply bg-white py-5 text-center
+    @apply bg-white py-5
 }
 
 .footer h2 {
