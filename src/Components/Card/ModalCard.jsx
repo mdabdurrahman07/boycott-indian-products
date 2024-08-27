@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import useProducts from "../../Hooks/useProducts"
 
 const ModalCard = ({value}) => {
@@ -17,7 +18,7 @@ const ModalCard = ({value}) => {
         />
         <h1 className="font-semibold text-lg md:text-xl text-center">{findProduct?.productName}</h1>
         <div className="text-center">
-          <span className="red_badge">{origin}</span>
+          <span className={`${origin.toLowerCase() === 'india' ? 'red_badge' : 'green_badge'}`}>{origin}</span>
         </div>
       </div>
   )
